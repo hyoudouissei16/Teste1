@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Love Proposal</title> 
+  <link rel="stylesheet" href="styles.css"> 
+ <style type="text/css" id="dcoder_stylesheet">body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    border: 2px solid #000;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#yes {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#no {
+    background-color: #f44336;
+    color: #fff;
+    position: relative;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+}
+
+.popup button {
+    margin-top: 10px;
+    background-color: #4caf50;
+    color: #fff;
+}</style></head> 
+ <body> 
+  <div class="container"> 
+   <h1>Você Quer ser meu amigo?</h1> 
+   <div class="buttons"> <button id="yes">SIM</button> <button id="no">NÃO</button> 
+   </div> 
+   <div id="popup" class="popup"> 
+    <p>OTIMO ENTAO ME MANDE UMA MENSAGEM (75)981540846</p> <button id="close">SAIR</button> 
+   </div> 
+  </div> 
+  <script src="script.js"></script> 
+ 
+<script type="text/javascript" id="dcoder_script">const noButton = document.getElementById('no');
+const yesButton = document.getElementById('yes');
+const popup = document.getElementById('popup');
+const closeButton = document.getElementById('close');
+
+noButton.addEventListener('mouseover', () => {
+    const container = document.querySelector('.container');
+    const containerRect = container.getBoundingClientRect();
+    const buttonRect = noButton.getBoundingClientRect();
+
+    const newLeft = Math.random() * (containerRect.width - buttonRect.width);
+    const newTop = Math.random() * (containerRect.height - buttonRect.height);
+
+    noButton.style.position = 'absolute';
+    noButton.style.left = `${newLeft}px`;
+    noButton.style.top = `${newTop}px`;
+});
+
+yesButton.addEventListener('click', () => {
+    popup.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+    popup.style.display = 'none';
+});</script></body></html>
